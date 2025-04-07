@@ -6,6 +6,8 @@ vim.g.autoformat = true
 -- Add any additional options here
 local opt = vim.opt
 
+vim.opt.clipboard = "unnamedplus" -- 设置剪贴板选项
+
 opt.number = true
 opt.relativenumber = true
 opt.autoindent = true
