@@ -1,6 +1,6 @@
 return {
   {
-    "tokyonight.nvim",
+    "folke/tokyonight.nvim",
     -- 下面是透明背景，暂时注释
     config = function()
       vim.cmd.colorscheme("tokyonight")
