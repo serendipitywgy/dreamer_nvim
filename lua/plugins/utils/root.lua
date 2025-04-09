@@ -35,7 +35,7 @@ function M.detectors.lsp(buf)
   end
   local roots = {} ---@type string[]
   -- 获取所有附加到该缓冲区的LSP客户端
-  local clients = vim.lsp.get_active_clients({ bufnr = buf })
+  local clients = vim.lsp.get_clients({ bufnr = buf })
   for _, client in pairs(clients) do
     -- 收集工作区文件夹
     local workspace = client.config.workspace_folders

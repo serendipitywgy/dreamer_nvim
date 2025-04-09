@@ -5,6 +5,9 @@ return {
     },
     opts = {
         options = {
+            indicator = {
+                style = 'underline',
+            },
             diagnostics = "nvim_lsp",
             diagnostics_indicator = function(_, _, diagnostics_dict, _)
                 local indicator = " "
