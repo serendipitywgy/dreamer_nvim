@@ -28,6 +28,7 @@ require("lazy").setup({
     -- { import = "plugins" },
     { import = "plugins.ui" },
     { import = "plugins.lsp" },
+    { import = "plugins.ai" },
   },
   -- 在这里配置其他设置。详情请参阅文档。
   -- 安装插件时使用的配色方案
