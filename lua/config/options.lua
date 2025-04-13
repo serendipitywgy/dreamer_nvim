@@ -8,6 +8,12 @@ local opt = vim.opt
 
 vim.opt.clipboard = "unnamedplus" -- 设置剪贴板选项
 
+opt.spell = false -- 禁止使用拼写检查
+
+-- 显示空白字符
+-- opt.list = true
+-- opt.listchars = { space = "·" }
+
 opt.number = true
 opt.relativenumber = true
 opt.autoindent = true
@@ -27,6 +33,8 @@ opt.shiftwidth = 4 -- 自动缩进宽度为4
 opt.tabstop = 4 -- 制表符宽度为4
 opt.cindent = true -- 启用C语言样式缩进
 opt.cino = "(0,W4" -- 设置C语言缩进选项
+
+opt.undofile = true --启用了 Neovim 的持久化撤销历史功能
 
 -- ' 清空背景色，支持透明背景
 -- autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
