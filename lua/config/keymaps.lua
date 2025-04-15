@@ -80,3 +80,7 @@ set_keymaps({ "n", "x" }, {"<leader>gB"}, function() Snacks.gitbrowse() end, { d
 set_keymaps({"n", "x" }, {"<leader>gY"}, function()
   Snacks.gitbrowse({ open = function(url) vim.fn.setreg("+", url) end, notify = false })
 end, { desc = "Git Browse (copy)" })
+
+
+--头文件/源文件切换
+set_keymaps({"v", "n"}, {"<leader>ch"}, "<cmd>ClangdSwitchSourceHeader<CR>", { silent = true })
