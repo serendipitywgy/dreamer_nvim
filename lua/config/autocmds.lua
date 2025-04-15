@@ -138,3 +138,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     vim.fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
 })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    -- 覆盖lualine的高亮组
+    vim.api.nvim_set_hl(0, "lualine_a_normal", { fg = "#f8f8f2", bg = "NONE", bold = true })
+    vim.api.nvim_set_hl(0, "lualine_b_normal", { fg = "#f8f8f2", bg = "NONE" })
+    vim.api.nvim_set_hl(0, "lualine_c_normal", { fg = "#f8f8f2", bg = "NONE" })
+    -- 可以添加更多高亮组...
+  end,
+})
