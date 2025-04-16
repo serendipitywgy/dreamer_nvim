@@ -3,6 +3,7 @@ return {
 	dependencies = {
 		"akinsho/toggleterm.nvim",
 	},
+	event = "VeryLazy",
 	config = function()
 		require("cmake-tools").setup({
 			cmake_command = "cmake", -- this is used to specify cmake command path
