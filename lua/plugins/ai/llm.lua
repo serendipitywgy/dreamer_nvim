@@ -153,7 +153,7 @@ You must:
                         handler = tools.action_handler,
                         opts = {
                             fetch_key = function()
-                                return vim.env.GITHUB_TOKEN
+                                return vim.env.GLM_TOKEN
                             end,
                             url = "https://open.bigmodel.cn/api/paas/v4/chat/completions",
                             model = "glm-z1-flash",
