@@ -12,10 +12,35 @@ return {
         -- 加载 snacks 选择器
         require("plugins.utils.snacks-pick")
 
-        -- 配置 snacks
+        -----------------------
+        -- Snacks 核心配置模块 --
+        -----------------------
         require("snacks").setup({
-            explorer = { 
-                enabled = true,
+            indent = {
+                indent = {
+                    priority = 1,
+                    enabled = true,           -- 启用缩进指南
+                    char = "│",               -- 缩进指南使用的字符
+                    only_scope = false,       -- 是否只显示作用域的缩进指南
+                    only_current = false,     -- 是否只在当前窗口显示缩进指南
+                    -- hl = "SnacksIndent",      -- 缩进指南的高亮组
+                    -- 可以使用多个高亮组循环显示不同级别的缩进
+                    hl = {
+                        "SnacksIndent1",
+                        "SnacksIndent2",
+                        "SnacksIndent3",
+                        "SnacksIndent4",
+                        "SnacksIndent5",
+                        "SnacksIndent6",
+                        "SnacksIndent7",
+                        "SnacksIndent8",
+                    },
+                },
+            },
+            zen = {
+            },
+            explorer = {
+                 enabled = true,
                  replace_netrw = true,
             },
             dashboard = {
@@ -138,6 +163,38 @@ return {
 
         -- UI 相关
         keymap("n", "<leader>uC", function() Snacks.picker.colorschemes() end, { desc = "Colorschemes" })
+
+        keymap("n", "<leader>e", function() 
+		-- 使用你自定义的 Root 模块获取项目根目录
+		local root = Root()
+		Snacks.explorer.open({ cwd = root })
+        end, { desc = "Explorer (Root Dir)" })
+
+        keymap("n", "<leader>E", function() 
+		-- 获取当前文件所在目录
+		local buf = vim.api.nvim_get_current_buf()
+		local file = vim.api.nvim_buf_get_name(buf)
+		local dir = file ~= "" and vim.fn.fnamemodify(file, ":h") or vim.fn.getcwd()
+
+		-- 打开文件浏览器并定位到当前文件
+		Snacks.explorer.open({
+			cwd = dir,
+			reveal = file ~= "",
+		})
+        end, { desc = "Explorer (Current File Dir)" })
+        -- 进入 Zen 模式
+        keymap("n", "<leader>z", function() Snacks.zen.zen() end, { desc = "Toggle Zen Mode" })
+        -- 进入 Zoom 模式（最大化当前窗口）
+        keymap("n", "<leader>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom Mode" })
+
+        keymap("n", "<leader>ti", function()
+		if Snacks.indent.enabled then
+			Snacks.indent.disable()
+		else
+			Snacks.indent.enable()
+		end
+        end,{ desc = "enable/disable indent" })
+
 
         -- LSP 相关快捷键
         if vim.lsp.handlers then

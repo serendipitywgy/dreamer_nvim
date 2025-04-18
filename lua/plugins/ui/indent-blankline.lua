@@ -1,6 +1,7 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   event = { "BufReadPost", "BufNewFile" },
+  enabled = false,
   opts = function()
     Snacks.toggle({
       name = "Indention Guides",
