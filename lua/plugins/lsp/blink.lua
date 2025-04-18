@@ -12,26 +12,29 @@ return {
             }
         },
         keymap = {
+            -- preset = "super-tab",
             preset = "super-tab",
+            ["<CR>"] = { "accept", "fallback" },
         },
         sources = {
-            default = {"path", "snippets", "buffer", "lsp"}
+            default = { "path", "snippets", "buffer", "lsp" }
         },
         cmdline = {
-            sources = function ()
-               local cmd_type = vim.fn.getcmdtype()
-               if cmd_type == "/" then
-                   return {"buffer"}
+            sources    = function()
+                local cmd_type = vim.fn.getcmdtype()
+                if cmd_type == "/" then
+                    return { "buffer" }
                 end
                 if cmd_type == ":" then
-                    return {"cmdline"}
+                    return { "cmdline" }
                 end
                 return {}
             end,
-            keymap = {
-                preset = "super-tab"
+            keymap     = {
+                preset = "super-tab",
+            ["<CR>"] = { "accept", "fallback" },
             },
-            completion  = {
+            completion = {
                 menu = {
                     auto_show = true
                 }
