@@ -14,7 +14,6 @@ return {
         keymap = {
             -- preset = "super-tab",
             preset = "super-tab",
-            ["<CR>"] = { "accept", "fallback" },
         },
         sources = {
             default = { "path", "snippets", "buffer", "lsp" }
@@ -32,7 +31,6 @@ return {
             end,
             keymap     = {
                 preset = "super-tab",
-            ["<CR>"] = { "accept", "fallback" },
             },
             completion = {
                 menu = {
