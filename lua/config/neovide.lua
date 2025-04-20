@@ -10,7 +10,7 @@ function M.setup()
         vim.g.neovide_cursor_animation_length = 0.13
         vim.g.neovide_cursor_trail_length = 0.8
         vim.g.neovide_cursor_antialiasing = true
-        vim.g.neovide_cursor_vfx_mode = "railgun"
+        vim.g.neovide_cursor_vfx_mode = "railgun" -- 光标粒子
 
         -- 透明度设置
         vim.g.neovide_opacity = 0.9
@@ -27,8 +27,6 @@ function M.setup()
         -- 没有空闲时的刷新率
         vim.g.neovide_no_idle = true
 
-        -- 全屏模式
-        vim.g.neovide_fullscreen = false
 
         -- 输入法支持
         vim.g.neovide_input_ime = true
@@ -39,10 +37,26 @@ function M.setup()
         vim.keymap.set('i', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
         vim.keymap.set('c', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
         vim.keymap.set('t', '<C-S-v>', '<C-\\><C-n>"+pi', { noremap = true, silent = true })
-        -- 特定平台设置
-        if vim.fn.has("mac") == 1 then
-            vim.g.neovide_input_macos_alt_is_meta = true
+        -- 浮动窗口和弹出菜单透明度
+        vim.opt.winblend = 90 -- 浮动窗口透明度 (0-100)
+        -- vim.opt.pumblend = 20 -- 弹出菜单透明度 (0-100)
+
+        vim.g.neovide_scale_factor = 1.0
+        local change_scale_factor = function(delta)
+            vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
         end
+        vim.keymap.set("n", "<C-=>", function() change_scale_factor(1.25) end)
+        vim.keymap.set("n", "<C-->", function() change_scale_factor(1 / 1.25) end)
+
+        -- 全屏模式
+        vim.g.neovide_fullscreen = false
+        -- 切换全屏的函数
+        local toggle_fullscreen = function()
+            vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+        end
+
+        -- 设置快捷键 F11 切换全屏 (Linux 常用的全屏快捷键)
+        vim.keymap.set('n', '<F11>', toggle_fullscreen)
     end
 end
 
