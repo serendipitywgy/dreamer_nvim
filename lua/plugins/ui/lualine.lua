@@ -2,7 +2,7 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = {
         "nvim-tree/nvim-web-devicons",
-        "stevearc/aerial.nvim",
+        -- "stevearc/aerial.nvim",
     },
     event = "VeryLazy",
     opts = {

@@ -4,6 +4,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         "nvim-tree/nvim-web-devicons"
     },
+    event = "BufRead",  -- 在打开文件时加载
     config = function()
         require("aerial").setup({
             -- 优先使用 LSP，其次使用 Treesitter

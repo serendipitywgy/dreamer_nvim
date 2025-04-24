@@ -1,6 +1,7 @@
 return {
   'Exafunction/windsurf.vim',
   -- event = "InsertEnter",
+  enabled = false,
   config = function ()
 	-- Change '<C-g>' here to any keycode you like.
 	-- 基本设置
