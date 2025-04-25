@@ -38,7 +38,7 @@ function M.setup()
         vim.keymap.set('c', '<C-S-v>', '<C-r>+', { noremap = true, silent = true })
         vim.keymap.set('t', '<C-S-v>', '<C-\\><C-n>"+pi', { noremap = true, silent = true })
         -- 浮动窗口和弹出菜单透明度
-        vim.opt.winblend = 90 -- 浮动窗口透明度 (0-100)
+        -- vim.opt.winblend = 90 -- 浮动窗口透明度 (0-100)
         -- vim.opt.pumblend = 20 -- 弹出菜单透明度 (0-100)
 
         vim.g.neovide_scale_factor = 1.0
