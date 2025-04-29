@@ -74,18 +74,18 @@ return {
     --     vim.cmd.colorscheme("tokyonight")
     --   end,
     -- },
-    -- {
-    --   "catppuccin/nvim",
-    --   name = "catppuccin",
-    --   lazy = false, -- 确保插件立即加载
-    --   config = function()
-    --     require("catppuccin").setup(catppuccin_config) -- 传递自定义配置
-    --     vim.cmd.colorscheme("catppuccin") -- 在插件加载完成后应用颜色方案
-    --   end,
-    -- },
-    "rose-pine/neovim",
-    name = "rose-pine",
-    config = function()
-        vim.cmd("colorscheme rose-pine-dawn")
-    end
+    {
+      "catppuccin/nvim",
+      name = "catppuccin",
+      lazy = false, -- 确保插件立即加载
+      config = function()
+        require("catppuccin").setup(catppuccin_config) -- 传递自定义配置
+        vim.cmd.colorscheme("catppuccin") -- 在插件加载完成后应用颜色方案
+      end,
+    },
+    -- "rose-pine/neovim",
+    -- name = "rose-pine",
+    -- config = function()
+    --     vim.cmd("colorscheme rose-pine-dawn")
+    -- end
 }
