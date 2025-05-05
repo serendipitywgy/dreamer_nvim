@@ -16,7 +16,15 @@ return {
             preset = "super-tab",
         },
         sources = {
-            default = { "lazydev", "path", "snippets", "buffer", "lsp" }
+            default = { "lazydev", "path", "snippets", "buffer", "lsp" },
+            providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    -- make lazydev completions top priority (see `:h blink.cmp`)
+                    score_offset = 100,
+                },
+            },
         },
         cmdline = {
             sources    = function()
