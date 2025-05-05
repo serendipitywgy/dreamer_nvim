@@ -21,13 +21,6 @@ return {
                 fetch_key = function()
                     return vim.env.GLM_TOKEN
                 end,
-                -- url = "https://ark.cn-beijing.volces.com/api/v3/chat/completions",
-                -- model = "ep-20250226103242-mnd7v",
-                -- api_type = "deepSeek",
-                -- max_tokens = 8000,
-                -- fetch_key = function()
-                --   return vim.env.DEEPSEEK_TOKEN
-                -- end,
 
                 temperature = 0.3,
                 top_p = 0.7,
@@ -288,46 +281,6 @@ You must:
                             language = "Chinese",
                         },
                     },
-                    -- Completion = {
-                    --     handler = tools.completion_handler,
-                    --     opts = {
-                    --         -------------------------------------------------
-                    --         ---                 codeium
-                    --         -------------------------------------------------
-                    --         api_type = "codeium",
-                    --         style = "virtual_text",
-                    --
-                    --         n_completions = 1,
-                    --         context_window = 512,
-                    --         max_tokens = 256,
-                    --         filetypes = { sh = false },
-                    --         default_filetype_enabled = true,
-                    --         auto_trigger = true,
-                    --         -- style = "blink.cmp",
-                    --         -- style = "nvim-cmp",
-                    --         -- style = "virtual_text",
-                    --         keymap = {
-                    --             virtual_text = {
-                    --                 accept = {
-                    --                     mode = "i",
-                    --                     keys = "<A-a>",
-                    --                 },
-                    --                 next = {
-                    --                     mode = "i",
-                    --                     keys = "<A-n>",
-                    --                 },
-                    --                 prev = {
-                    --                     mode = "i",
-                    --                     keys = "<A-p>",
-                    --                 },
-                    --                 toggle = {
-                    --                     mode = "n",
-                    --                     keys = "<leader>cp",
-                    --                 },
-                    --             },
-                    --         },
-                    --     },
-                    -- },
                 },
             })
         end,

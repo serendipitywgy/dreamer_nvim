@@ -34,6 +34,9 @@ opt.tabstop = 4 -- 制表符宽度为4
 opt.cindent = true -- 启用C语言样式缩进
 opt.cino = "(0,W4" -- 设置C语言缩进选项
 
+opt.splitbelow = true -- 新窗口在下方
+opt.splitright = true -- 新窗口在右边
+
 opt.undofile = true --启用了 Neovim 的持久化撤销历史功能
 
 -- ' 清空背景色，支持透明背景
