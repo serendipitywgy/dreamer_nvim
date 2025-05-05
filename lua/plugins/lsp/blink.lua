@@ -16,7 +16,7 @@ return {
             preset = "super-tab",
         },
         sources = {
-            default = { "path", "snippets", "buffer", "lsp" }
+            default = { "lazydev", "path", "snippets", "buffer", "lsp" }
         },
         cmdline = {
             sources    = function()
